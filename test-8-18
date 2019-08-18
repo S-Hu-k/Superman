@@ -1,0 +1,166 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+//使用函数实现求斐波那契数
+//int fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 0;
+//	if (n <= 2)
+//	{
+//		return 1;
+//	}
+//	while (n>2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//
+//}
+//	int main()
+//{
+//		int n = 0;
+//		scanf("%d", &n);
+//		int ret = 0;
+//		ret = fib(n);
+//	printf("%d\n",ret);
+//	return 0;
+//}
+//使用递归求斐波那契数
+//int fib(int n)
+//{
+//	if (n<=2)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return fib(n - 1) + fib(n - 2);
+//	}
+//}
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;
+//	scanf("%d", &n);
+//
+//
+//	printf("%d ", fib(n));
+//
+//	system("pause");
+//	return 0;
+//}
+
+//编写一个函数实现n^k，使用递归实现
+//int main()
+//{
+//	int sum = 1;
+//	int n = 0;
+//	int k = 0;
+//	int count = 0;
+//	scanf("%d%d", &n, &k);
+//		while(count < k)
+//		{
+//			sum = n*sum;
+//			count++;
+//		}
+//		printf("%d", sum);
+//		system("pause");
+//	return 0;
+//}
+
+//写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和，
+//例如，调用DigitSum(1729)，则应该返回1 + 7 + 2 + 9，它的和是19
+//int DigitSum(int sum)
+//{ 
+//	if (sum <= 10)	
+//	{ 
+//	return sum; 
+//    } 
+//    else	
+//   { 
+//	  return sum % 10 + DigitSum(sum / 10);
+//   } 
+//}
+//int main()
+//{ 
+//	int sum = 0;	
+//	int ret = 0;	
+//	printf("请输入一个数字：\n");
+//	scanf("%d", &sum);	
+//	ret = DigitSum(sum);
+//	printf("%d\n", ret);
+//	system("pause");
+//	return 0; 
+//}
+
+//求n的阶乘
+//int main()
+//{
+//	int p = 1;
+//	int i = 0;
+//	int n = 0;
+//	scanf("%d", &n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		p = i*p;
+//	}
+//	printf("%d", p);
+//	system("pause");
+//	return 0;
+//}
+//递归求n 的阶乘
+//int is_p(int n)
+//{
+//	if (n < 2)
+//	{
+//		return 1;
+//	}
+//	else
+//	{
+//		return is_p(n - 1)*n;
+//	}
+//}
+//用函数打印一个整数的每一位
+//int main()
+//{
+//	int n = 0;
+//	int i = 1;
+//	scanf("%d", &n);
+//	int ret = 0;
+//	ret = is_p(n);
+//	printf("%d", is_p(n));
+//	system("pause");
+//	return 0;
+//}
+//递归方式实现打印一个整数的每一位 
+//int is_d(int n)
+//{
+//	if (n < 10)
+//	{
+//		printf("%d", n);
+//	}
+//	else
+//	{
+//		is_d(n / 10);
+//		printf("%d ", n % 10);
+//	}
+//}
+//
+//int main()
+//{
+//
+//	int n = 0;
+//	scanf("%d", &n);
+//	printf("%d\n", n);
+//	is_d(n);
+//
+//	system("pause");
+//	return 0;
+//}
+//
+
