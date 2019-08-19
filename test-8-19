@@ -1,0 +1,175 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+//递归和非递归分别实现strlen
+//用指针实现
+int strlen(char* arr)
+{
+	int i = 0;
+	while (*arr != '\0')
+	{
+		i++;
+		*arr++;
+	}
+	return i;
+	
+}
+int main()
+{
+	
+	char arr[] = {"abznxcjasjcc"};
+	int ret = 0;
+	ret = strlen(arr);
+	printf("%d", ret);
+	system("pause");
+	return 0;
+}
+
+//递归
+int strlen(char* arr)
+{
+	if (*arr == '\0')
+	{
+		return 0;
+	}
+	return 1 + strlen(arr + 1);
+}
+int main()
+{
+	char arr[] ="skdjs";
+	int ret = 0;
+	ret = strlen(arr);
+	printf("%d", ret);
+	system("pause");
+	return 0;
+}
+
+//1.
+//比如： 15 0000 1111 4 个 1
+//程序原型：
+int count_one_bits(unsigned int value)
+{
+	 返回 1的位数 
+}
+int count_one_bits(unsigned int value)
+{
+	
+	int i = 0;
+	while (value)
+	{
+		value=value / 2;
+		if (value % 2 == 1)
+		{
+			i++;
+		}
+		
+	}
+	return i+1;
+}
+int main()
+{
+	int num = 0;
+	int ret = 0;
+	printf("请输入一个数字:>");
+	scanf("%d", &num);
+	ret = count_one_bits(num);
+	printf("%d", ret);
+	system("pause");
+	return 0;
+}
+
+//2.获取一个数二进制序列中所有的偶数位和奇数位，
+//分别输出二进制序列。
+#include<stdio.h> 
+int main()
+{
+	int arr[32];
+	int m=0,i=0,count=0;
+	printf("请输入一个十进制数:\n");
+	scanf("%d",&m);
+	for(i=0;m!=0;i++)   
+	{         
+		arr[i]=m%2; 
+		m=m/2;        
+		count=i+1;  
+	} 
+	for(;count<32;count++)	
+	{	  
+		arr[count]=0;
+	}    
+	printf("转换为二进制后奇数位为:\n");
+	for(i=31;i>=0;i-=2)
+	{		
+		printf("%d ",arr[i]);	
+	}	
+	printf("\n");
+		printf("转换为二进制后偶数位为：\n");
+	for(i=30;i>=0;i-=2)	     
+	{     	
+		printf("%d ",arr[i]);	 
+	}         
+	printf("\n");
+	system("pause");
+	return 0;
+}
+
+//3. 输出一个整数的每一位。
+int p(int num)
+{
+	if (num < 10)
+	{
+		return num;
+	}
+	else
+	{
+		while (num)
+		{
+			printf("%d", num % 10);
+			num = num / 10;
+			break;
+		}
+	}
+}
+int main()
+{
+	int num = 0;
+	scanf("%d", &num);
+	int ret = 0;
+	ret = p(num);
+	printf("%d ", ret);
+	system("pause");
+	return 0;
+}
+
+
+//4.编程实现：
+//两个int（32位）整数m和n的二进制表达中，有多少个位(bit)不同？
+//输入例子 :
+//1999 2299
+//输出例子 : 7
+
+
+int count_diffrent_bits(int x, int y)
+{
+	int i = 0;
+	int tmp = x ^ y;
+	int count = 0;
+	while (tmp)
+	{
+		tmp = tmp & (tmp - 1);
+		count++;
+	}
+	return count;
+}
+int main()
+{
+	int m = 0;
+	int n = 0;
+	printf("请输入两个整数m,n：\n");
+	scanf("%d\n%d", &m, &n);
+	int ret = count_diffrent_bits(m, n);
+	printf("两个整数%d,%d有%d位不同\n", m, n, ret);
+	system("pause");
+	return 0;
+}
