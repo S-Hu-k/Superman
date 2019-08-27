@@ -111,33 +111,33 @@
 //}
 
 //模拟实现strcmp
-//char* my_strcmp(const char*s1, const char*s2)
-//{
-//	assert(s1&&s2);
-//	while (*s1&&*s2)
-//	{
-//		if (*s1++ == *s2++)
-//		{
-//			;
-//		}
-//	}
-//	return (int*)(*s1 - *s2);
-//}
-//int main()
-//{
-//	char arr1[] = "abcd";
-//	char arr2[] = "abc";
-//	int* ret = my_strcmp(arr1, arr2);
-//	if (ret > 0)
-//	{
-//		printf("大于\n");
-//	}
-//	else if (ret < 0)
-//	{
-//		printf("小于\n");
-//	}
-//	else
-//		printf("两个字符串相等\n");
-//	system("pause");
-//	return 0;
-//}
+char* my_strcmp(const char*s1, const char*s2)
+{
+	assert(s1&&s2);
+	while (*s1&&*s2)
+	{
+		if (*s1++ == *s2++)
+		{
+			;
+		}
+	}
+	return (int*)(*s1 - *s2);
+}
+int main()
+{
+	char arr1[] = "abcd";
+	char arr2[] = "abc";
+	int* ret = my_strcmp(arr1, arr2);
+	if (ret > 0)
+	{
+		printf("大于\n");
+	}
+	else if (ret < 0)
+	{
+		printf("小于\n");
+	}
+	else
+		printf("两个字符串相等\n");
+	system("pause");
+	return 0;
+}
