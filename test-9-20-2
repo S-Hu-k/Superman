@@ -1,0 +1,92 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+//int main()
+//{
+//	int x, y, z;
+//	int sum;
+//	printf("请输入三个整数x,y,z:");
+//	scanf("%d %d %d", &x, &y, &z);
+//	sum = x + y + z;
+//	printf("sum=%d", sum);
+//	system("pause");
+//	return 0;
+//}
+//int main()
+//{
+//	char arr[15] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm' };
+//	int i = 0;
+//	for (i = 0; i < 15; i +=2)
+//	{
+//		printf("%c\n", *(&arr[i])+32);
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i, j, m, n;
+//	i = 3;
+//	j = 5;
+//	m = ++i; n = j++;
+//	printf("%d %d %d %d\n", i, j, m, n);
+//	system("pause");
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int c1, c2;
+//	c1 = 97; c2 = 98;
+//	printf("%c,%c\n", c1, c2);
+//	printf("%d,%d\n", c1, c2);
+//
+//	system("pause");
+//	return 0;
+//}
+
+//int main()
+//{
+//	char c1 = 'a', c2 = 'b', c3 = 'c', c4 = '\101', c5 = '\116';
+//	printf("a%cb%c\tc%c\tabc\n", c1, c2, c3);
+//	printf("\t\b%c%c", c4, c5);
+//	system("pause");
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int x = 4, y = 0, z;
+//	x *= 3 + 2;
+//	printf("%d\n", x);
+//	x *= (y = (z = 4));
+//	printf("%d", x);
+//	system("pause");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int m;
+//	int i;
+//	int flag;
+//	printf("请输入要判断的整数m:");
+//	scanf("%d", &m);
+//	flag = 1;
+//	for (i = 2; i < m; i++)
+//	{
+//		if (m%i == 0)
+//		{
+//			flag = 0;
+//			break;
+//		}
+//		if (flag == 1)
+//		{
+//			printf("%d是素数\n", m);
+//		}
+//		else
+//			printf("%d不是素数\n", m);
+//	}
+//	system("pause");
+//	return 0;
+//}
