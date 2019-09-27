@@ -1,0 +1,156 @@
+#ifndef _COMMON_H_
+#define _COMMON_H_
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<assert.h>
+#include<stdbool.h>
+#include<cstddef.h>
+
+#define DataType int
+#endif
+
+
+#ifndef _COMMON_H_
+#define _COMMON_H_
+
+
+#include"common.h"
+
+
+#define SEQLIST_DEFAULT_SIZE 8
+typedef struct SeqList
+{
+	DataType *base;
+	size_t capacity;
+	size_t size;
+
+}SeqList;
+////
+//声明
+void SeqListInit(SeqList *psl, int sz);
+int SeqListPushBack(SeqList *psl, DataType x);
+int SeqListPushFront(SeqList *psl, DataType x);
+int SeqListLength(SeqList *psl);
+void SeqListModifyByPos(SeqList *psl, int pos, DataType x);
+
+int SeqListIsFull(SeqList *psl)
+{
+	return psl->size >= psl->capacity;
+}
+int SeqListIsEmpty(SeqList *psl)
+{
+	return psl->size == 0;
+}
+
+
+//实现
+void SeqListInit(SeqList *psl, int sz)
+{
+	psl->capacity = sz > SEQLIST_DEFAULT_SIZE ? sz : SEQLIST_DEFAULT_SIZE;
+	psl->base = (DataType*)malloc(sizeof(DataType)*(psl->capacity));
+	psl->size = 0;
+}
+
+int SeqListPushBack(SeqList *psl, DataType x)
+{
+	assert(psl);
+	if (SeqListIsFull(psl))
+	{
+		printf("顺序表已满, %d 不能插入.\n", x);
+		return 0;
+	}
+	psl->base[psl->size++] = x;
+	return 1;
+}
+
+int SeqListPushFront(SeqList *psl, DataType x)
+{
+	assert(psl);
+	if (SeqListIsFull(psl))
+	{
+		printf("顺序表已满, %d 不能插入.\n", x);
+		return 0;
+	}
+	for (int i = psl->size; i>0; --i)
+	{
+		psl->base[i] = psl->base[i - 1];
+	}
+	psl->base[0] = x;
+	psl->size++;
+	return 1;
+}
+
+void SeqListShow(SeqList *psl)
+{
+	for (int i = 0; i<psl->size; ++i)
+	{
+		printf("%d ", psl->base[i]);
+	}
+	printf("\n");
+}
+int SeqListLength(SeqList *psl)
+{
+	assert(psl);
+	return psl->size;
+}
+
+#endif
+
+
+
+#include"seqlist.h"
+int main()
+{
+	SeqList mylist;
+	SeqListInit(&mylist, SEQLIST_DEFAULT_SIZE);
+	int select = 1;
+	DataType item;
+	while (select)
+	{
+		printf("*************************************\n");
+		printf("**** 1.push_back    2.push_front ****\n");
+		printf("**** 3.show_list    0.quit_system****\n");
+		printf("**** 4.pop_back     5.pop_front  ****\n");
+		printf("**** 6.insert_pos   7.insert_val ****\n");
+		printf("**** 8.delete_pos   9.delete_val ****\n");
+		printf("**** 10.find_pos    11.find_val  ****\n");
+		printf("**** 12.sort        13.reverse   ****\n");
+		printf("**** 14.length      15.clear     ****\n");
+		printf("**** 16.modify_pos  17.modify_val****\n");
+		printf("*************************************\n");
+		printf("请选择:>");
+		scanf("%d", &select);
+		if (select == 0)
+		{
+			break;
+		}
+		switch (select)
+		{
+		case1:
+			printf("请输入要插入的数据<-1结束>:>");
+			while (scanf("%d", &item != -1))
+			{
+				SeqListPushBack(&mylist, item);
+			}
+			break;
+		case2:
+			printf("请输入要插入的数据<-1结束>:>");
+			while (scanf("%d", &item != -1))
+			{
+				SeqListPushFront(&mylist, item);
+			}
+			break;
+		case3:
+			SeqListShow(&mylist);
+			break;
+		case14:
+			printf("SeqList Length=%d\n", SeqListLength(&mylist));
+			break;
+		default:
+			printf("输入错误，请重新输入....\n");
+			break;
+		}
+	}
+	return 0;
+}
